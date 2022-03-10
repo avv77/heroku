@@ -21,12 +21,12 @@ def start(message):
     username = message.from_user.first_name
     bot.reply_to(message, f'Hello, {username}!')
 
-    db_object.execute(f'SELECT id FROM users WHERE id = {id}')
-    result = db_object.fetchone()
-
-    if not result:
-        db_object.execute('INSERT INTO users(id, username, messages) VALUES (%s, %s, %s)', (id, username, 0))
-        db_connection.commit()
+    # db_object.execute(f'SELECT id FROM users WHERE id = {id}')
+    # result = db_object.fetchone()
+    #
+    # if not result:
+    db_object.execute('INSERT INTO users(id, username, messages) VALUES (%s, %s, %s)', (id, username, 0))
+    db_connection.commit()
 
 
 @server.route(f'/{BOT_TOKEN}', methods=['POST'])
