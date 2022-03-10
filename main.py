@@ -16,7 +16,7 @@ db_object = db_connection.cursor()
 
 
 def update_messages_count(user_id):
-    db_object.execute(f'UPDATE users SET messages = messages + 1 WHERE id = {user_id}')
+    db_object.execute(f'UPDATE users SET messanges = messages + 1 WHERE id = {user_id}')
     db_connection.commit()
 
 
